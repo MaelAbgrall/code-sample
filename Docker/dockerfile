@@ -1,0 +1,10 @@
+FROM image:version
+
+WORKDIR /absolute/or/relative/path/to/runningapp
+COPY
+
+RUN 
+
+EXPOSE 8080
+
+CMD ["my command"]
