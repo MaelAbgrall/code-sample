@@ -1,0 +1,5 @@
+use strict;
+use warning;
+
+print "hello world";
+<>;
