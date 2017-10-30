@@ -1,10 +1,14 @@
-FROM image:version
+#FROM image:version
+FROM node:latest
 
-WORKDIR /absolute/or/relative/path/to/runningapp
-COPY
+#WORKDIR /absolute/or/relative/path/to/runningapp
+WORKDIR /app
 
-RUN 
+COPY . /app
+
+#RUN commandline
+RUN npm install -g ember-cli
 
 EXPOSE 8080
 
-CMD ["my command"]
+CMD ["my", "command"]
