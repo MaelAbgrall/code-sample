@@ -20,4 +20,4 @@ is_boolean(b) #true
 is_atom(true) #true
 
 Hello #aliases. Start with upper case
-is_atom(Hello) #true
+is_atom(Hello) #truemax_int

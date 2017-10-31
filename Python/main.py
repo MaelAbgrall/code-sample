@@ -1,39 +1,97 @@
-#int i_int = 2
+def add(numberCurrent, numberAdd):
+    """add docstring:
+    return numberCurrent plus numberAdd
+    """
+    result = numberCurrent + numberAdd
+    return result
+
+def sub(numberCurrent, numberSub):
+    """sub docstring:
+    return numberCurrent minus numberSub
+    """
+    result = numberCurrent - numberSub
+    return result
+
+def mult(numberCurrent, numberMult):
+    """mult docstring:
+    return numberCurrent multiplied by numberMult
+    """
+    result = numberCurrent * numberMult
+    return result
+
+def div(numberCurrent, numberDiv):
+    """div docstring:
+    return numberCurrent divided by numberDiv
+    """
+    result = numberCurrent / numberDiv
+    return result
+
+def power(numberCurrent, numberPower):
+    """power docstring:
+    return numberCurrent exponent numberPower
+    """
+    result = pow(numberCurrent, numberPower)
+    return result
+
+def root(numberCurrent, numberRoot):
+    """root  docstring:
+    return numberCurrent root correctRoot
+    numberRoot shoud be an integer, not a float!
+    """
+    correctroot = 1 / numberRoot
+    result = pow(numberCurrent, correctroot)
+    return result
 
 
-def my_function (number_int, max_int):
-    i = 0
-    while i < 10:
-        print "hello"
-        i = i + 1
+HELLOMESSAGE_STR = 'I am' + 3 * ' very' + """ happy to see "you" """
+print (HELLOMESSAGE_STR)
 
-
-hellomessage_str = 'I am' + 3 * ' very' + """ happy to see "you" """
-
-print hellomessage_str
-
-menu_str = """\
+ASKNUMBER_STR = "please enter a number: "
+MENU_STR = """\
 Menu:
-    1.      Addition
-    2.      Substraction
-    3.      Multiply
-    4.      Divide
-"""
-
-print menu_str
-
-"""
-if mystring and myvariable:
-    print "type is " + str(type(myvariable)) #give the type of the variable
-"""
-uservar = input("write a number")
-uservar = int(uservar) #cast
-
-print type(uservar)
+    +       Addition
+    -       Substraction
+    *       Multiply
+    /       Divide
+    rt      n RootASKNUMBER_STR
+    x       Power
+    hey     gradient descent       
+    exit    exit
 
 """
-for mycharacter in mystring: #for loop in pyt hon are like foreach in c#/java/pearl
-    print mycharacter
-"""
-for x in range(0, 3):
-    print "We're on time %d" % (x)
+result_float = 0.0
+
+while True:
+    print (MENU_STR)
+    uservar = input ()
+
+    #switch does not exist in python
+    if(uservar == "+"):
+        userNumber_int = int(input(ASKNUMBER_STR))
+        result_float = add(result_float, userNumber_int)
+
+    elif(uservar == "-"):
+        userNumber_int = int(input(ASKNUMBER_STR))
+        result_float = sub(result_float, userNumber_int)
+
+    elif(uservar == "*"):
+        userNumber_int = int(input(ASKNUMBER_STR))
+        result_float = mult(result_float, userNumber_int)
+
+    elif(uservar == "/"):
+        userNumber_int = int(input(ASKNUMBER_STR))
+        result_float = div(result_float, userNumber_int)
+
+    elif(uservar == "rt"):
+        userNumber_int = int(input(ASKNUMBER_STR))
+        result_float = root(result_float, userNumber_int)
+
+    elif(uservar == "x"):
+        userNumber_int = int(input(ASKNUMBER_STR))
+        result_float = power(result_float, userNumber_int)
+
+    elif(uservar == "hey"):
+        result_float = 1
+        
+    elif(uservar == "exit"):
+        break
