@@ -1,3 +1,6 @@
+"""module docstring:
+this is a basic calculator
+"""
 def add(numberCurrent, numberAdd):
     """add docstring:
     return numberCurrent plus numberAdd
