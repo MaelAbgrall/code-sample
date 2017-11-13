@@ -31,6 +31,24 @@ pip install -r requirements.txt
 
 [example](example-requirements.txt)
 
+## Virtual environment
+
+A good practice is to use a virtual environment: it's an independent python environment, allowing you to calibrate libraries for each projects
+
+```bash
+#creation of a new environment
+python3 -m venv /path/to/new/virtual/environment
+
+#using a virtual environment
+source /path/to/the/environment
+#console should now look like this:
+(myenv) user@host~:$
+#by now you can call any program using python3 /myprogram.py
+
+#to quit the virtual environment, just type in command line
+deactivate
+```
+
 ## Convention
 
 Style convention for python is PEP 8
