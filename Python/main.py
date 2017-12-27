@@ -1,100 +1,75 @@
-"""module docstring:
-this is a basic calculator
-"""
-def add(numberCurrent, numberAdd):
-    """add docstring:
-    return numberCurrent plus numberAdd
-    """
-    result = numberCurrent + numberAdd
-    return result
+#importing a class
+from model import *
 
-def sub(numberCurrent, numberSub):
-    """sub docstring:
-    return numberCurrent minus numberSub
-    """
-    result = numberCurrent - numberSub
-    return result
-
-def mult(numberCurrent, numberMult):
-    """mult docstring:
-    return numberCurrent multiplied by numberMult
-    """
-    result = numberCurrent * numberMult
-    return result
-
-def div(numberCurrent, numberDiv):
-    """div docstring:
-    return numberCurrent divided by numberDiv
-    """
-    result = numberCurrent / numberDiv
-    return result
-
-def power(numberCurrent, numberPower):
-    """power docstring:
-    return numberCurrent exponent numberPower
-    """
-    result = pow(numberCurrent, numberPower)
-    return result
-
-def root(numberCurrent, numberRoot):
-    """root  docstring:
-    return numberCurrent root correctRoot
-    numberRoot shoud be an integer, not a float!
-    """
-    correctroot = 1 / numberRoot
-    result = pow(numberCurrent, correctroot)
-    return result
+#importing a module
+import calculate
+import numbertoascii
 
 
-HELLOMESSAGE_STR = 'I am' + 3 * ' very' + """ happy to see "you" """
-print (HELLOMESSAGE_STR)
 
-ASKNUMBER_STR = "please enter a number: "
-MENU_STR = """\
-Menu:
-    +       Addition
-    -       Substraction
-    *       Multiply
-    /       Divide
-    rt      n RootASKNUMBER_STR
-    x       Power
-    hey     gradient descent       
-    exit    exit
+#main is considered as a module by python, it is useful to create packages and run tests against it
+def main():
+    storage = Model()
+    print(storage.menuString)
+    
+    
+    firstnumber = float(input("please enter your first number\n"))
+    storage.result = firstnumber
+    asciiNumber = numbertoascii.convert(firstnumber)
+    storage.asciiresult = asciiNumber
 
-"""
-result_float = 0.0
-
-while True:
-    print (MENU_STR)
-    uservar = input ()
-
-    #switch does not exist in python
-    if(uservar == "+"):
-        userNumber_int = int(input(ASKNUMBER_STR))
-        result_float = add(result_float, userNumber_int)
-
-    elif(uservar == "-"):
-        userNumber_int = int(input(ASKNUMBER_STR))
-        result_float = sub(result_float, userNumber_int)
-
-    elif(uservar == "*"):
-        userNumber_int = int(input(ASKNUMBER_STR))
-        result_float = mult(result_float, userNumber_int)
-
-    elif(uservar == "/"):
-        userNumber_int = int(input(ASKNUMBER_STR))
-        result_float = div(result_float, userNumber_int)
-
-    elif(uservar == "rt"):
-        userNumber_int = int(input(ASKNUMBER_STR))
-        result_float = root(result_float, userNumber_int)
-
-    elif(uservar == "x"):
-        userNumber_int = int(input(ASKNUMBER_STR))
-        result_float = power(result_float, userNumber_int)
-
-    elif(uservar == "hey"):
-        result_float = 1
+    while True:
         
-    elif(uservar == "exit"):
-        break
+        uservar = input ()
+
+        #switch does not exist in python
+        if(uservar == "+"):
+            userNumber_int = float(input())
+            storage.result = calculate.add(storage.result, userNumber_int)
+            storage.asciiresult = numbertoascii.convert(storage.result)
+            print(len(str(storage.result)))
+            print(storage.asciiresult)
+
+        elif(uservar == "-"):
+            userNumber_int = float(input())
+            storage.result = calculate.sub(storage.result, userNumber_int)
+            storage.asciiresult = numbertoascii.convert(storage.result)
+            print(storage.asciiresult)
+
+        elif(uservar == "*"):
+            userNumber_int = float(input())
+            storage.result = calculate.mult(storage.result, userNumber_int)
+            storage.asciiresult = numbertoascii.convert(storage.result)
+            print(storage.asciiresult)
+
+        elif(uservar == "/"):
+            userNumber_int = float(input())
+            storage.result = calculate.div(storage.result, userNumber_int)
+            storage.asciiresult = numbertoascii.convert(storage.result)
+            print(storage.asciiresult)
+
+        elif(uservar == "rt"):
+            userNumber_int = float(input())
+            storage.result = calculate.root(storage.result, userNumber_int)
+            storage.asciiresult = numbertoascii.convert(storage.result)
+            print(storage.asciiresult)
+
+        elif(uservar == "x"):
+            userNumber_int = float(input())
+            storage.result = calculate.power(storage.result, userNumber_int)
+            storage.asciiresult = numbertoascii.convert(storage.result)
+            print(storage.asciiresult)
+
+        elif(uservar == "clear"):
+            storage.result = 0.0
+            storage.asciiresult = numbertoascii.convert(storage.result)
+            print(storage.asciiresult)
+            
+        elif(uservar == "exit"):
+            break
+        
+        else:
+            print(storage.warningString)
+
+if __name__ == "__main__":
+    main()

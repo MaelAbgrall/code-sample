@@ -49,6 +49,7 @@ source /path/to/the/environment
 deactivate
 ```
 
+*note: on fedora 26, python3 default environment is not recognised*
 ## Convention
 
 Style convention for python is PEP 8
