@@ -35,6 +35,7 @@ pip install -r requirements.txt
 
 A good practice is to use a virtual environment: it's an independent python environment, allowing you to calibrate libraries for each projects
 
+####linux:
 ```bash
 #creation of a new environment
 python3 -m venv /path/to/new/virtual/environment
@@ -45,11 +46,21 @@ source /path/to/the/environment
 (myenv) user@host~:$
 #by now you can call any program using python3 /myprogram.py
 
+#to generate the requirements.txt:
+touch requirements.txt
+pip freeze > requirements.txt
+
 #to quit the virtual environment, just type in command line
 deactivate
 ```
 
-*note: on fedora 26, python3 default environment is not recognised*
+####with windows:
+```batch
+virtualenv\path\Scripts\activate.bat
+
+deactivate.bat
+```
+
 ## Convention
 
 Style convention for python is PEP 8
