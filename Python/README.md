@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 A good practice is to use a virtual environment: it's an independent python environment, allowing you to calibrate libraries for each projects
 
-####linux:
+#### Linux:
 ```bash
 #creation of a new environment
 python3 -m venv /path/to/new/virtual/environment
@@ -54,7 +54,7 @@ pip freeze > requirements.txt
 deactivate
 ```
 
-####with windows:
+#### windows:
 ```batch
 virtualenv\path\Scripts\activate.bat
 
