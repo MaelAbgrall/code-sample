@@ -17,3 +17,6 @@ ls -a | grep whatImlookingfor
 ssh user@host
 
 scp -r sourcefolder user@host/destinationfolder
+
+
+df -h /myfolder # disk usage -h = human readable
