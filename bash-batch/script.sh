@@ -20,3 +20,4 @@ scp -r sourcefolder user@host/destinationfolder
 
 
 df -h /myfolder # disk usage -h = human readable
+du --max-depth=1 --human-readable /var/lib/docker/overlay2 | sort --human-numeric-sort #list folder and size, sort by size
