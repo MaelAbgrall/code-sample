@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  servicename:
+    container_name: hello_world
+    image: image/path:version
+    ports:
+      - external:internal
+    volumes:
+      - host/path:container/path
+    depends_on:
+      - servicename
+    restart: always
+    environment:
+     - SOMETHING: "somethingsomething"
