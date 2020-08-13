@@ -9,6 +9,14 @@ Also Python 3 remove many issues from python 2 (algebra, unicode, etc).
 
 python have an interactive mode (just type python3 in command line)
 
+**on linux python can clash with python3, a link can be created to remove this issue:**
+```bash
+nano ~/.basrc
+# add two lines:
+alias python=python3
+alias pip=pip3
+```
+
 ## package
 
 Python have a package installer named pip
@@ -48,7 +56,7 @@ A good practice is to use a virtual environment: it's an independent python envi
 python3 -m venv path/to/new/virtual/environment
 
 # using a virtual environment
-source environment/bin/activate
+source path/bin/activate
 # console should now look like this:
 (myenv) user@host~:$
 # by now you can call any program using python3 /myprogram.py
