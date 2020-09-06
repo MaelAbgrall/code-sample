@@ -37,7 +37,6 @@ For required package in a project:
 ```bash
 pip install -r requirements.txt
 ```
-
 [example](example-requirements.txt)
 
 #### useful packages:
@@ -49,6 +48,16 @@ pip install -r requirements.txt
 ## Virtual environment
 
 A good practice is to use a virtual environment: it's an independent python environment, allowing you to calibrate libraries for each projects
+
+#### Pipenv:
+
+**a better alternative is to venv is pipenv**
+pipenv works on top of virtualenv, but with a nicer interface, and automatic segmentation of deps (prod, dev, etc)
+
+```bash
+pipenv install abcd=2.0
+pipenv install pylint --dev
+```
 
 #### Linux:
 ```bash
