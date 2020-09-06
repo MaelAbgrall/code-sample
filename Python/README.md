@@ -17,6 +17,10 @@ alias python=python3
 alias pip=pip3
 ```
 
+## OOP functions to know:
+
+[medium: magic/special methods](https://medium.com/better-programming/5-pairs-of-magic-methods-in-python-you-should-know-f98f0e5356d6)
+
 ## package
 
 Python have a package installer named pip
